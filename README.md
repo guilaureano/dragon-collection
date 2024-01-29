@@ -1,33 +1,110 @@
-Stack:
+# Collection Dragon
 
-- React JS + TypeScript + Vite
+Aplicação para cadastro de Dragões!
+
+## Desenvolvido utilizando:
+
+- ### React JS + TypeScript
+- ### Vite
+
+[Vite](https://vitejs.dev/) para criar o projeto.
+
+- ### React Router
+
+[React Router](https://reactrouter.com/en/main) para gerenciamento de rotas.
+
+### Axios
+
+[Axios](https://axios-http.com/) para realizar as requisições.
+
+### Sass
+
+[Sass](https://sass-lang.com/) para organização dos estilos.
+
+### Git e GitHub
+
+Git e [Github](https://github.com/) para versionamento.
+
 - Node version: 20.3.1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Processo de Desenvolvimento
 
-Currently, two official plugins are available:
+Para o presente projeto foram desenvolvidos as seguintes telas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Acesso ao sistema e cadastro de novo usuário
 
-## Expanding the ESLint configuration
+path: /signin
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![alt](./src/assets/images/signin.png)
 
-- Configure the top-level `parserOptions` property like this:
+path: /signup
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
+![alt](./src/assets/images/signup.png)
+
+### Página inicial
+
+path: /
+
+Página inicial, contém a listagem de dragões cadastrados com possibilidade de exclusão e edição dos mesmo, ou criação de um novo Dragão.
+
+![alt](./src/assets/images/home.png)
+
+![alt](./src/assets/images/home-delete.png)
+
+### Página de detalhe
+
+path: /dragon/:id
+Página de detalhe do Dragão, pode ser acessada atráves do botão "ver mais" apresentado em cada item da lista de dragões da página inicial.
+
+![alt](./src/assets/images/detail.png)
+
+### Página de cadastro de novo Dragão
+
+path: /dragon/new
+Página de cadastro de um novo Dragão, pode ser acessada atráves do botão "Adicionar novo dragão", posicionado acima da listagem de Dragões da página inicial.
+
+![alt](./src/assets/images/register.png)
+
+### Página para alterar um Dragão
+
+path: /dragon/edit/:id
+Página de edição de um Dragão, pode ser acessada atráves do botão "editar" apresentado em cada item da lista de dragões da página inicial.
+
+![alt](./src/assets/images/edit.png)
+
+### Componentes utilizados
+
+No desenvolvimento deste projeto, não foi utilizado nenhuma biblioteca de compotenetes (Material-ui, ant-design, ...), todos os compoentes aqui utilizados foram desenvolvidos dentro do próprio projeto.
+
+## Melhorias futuras
+
+- adição de testes unitários.
+- criação de um Navbar com o nome do APP e ações do usuário.
+
+## Para executar o projeto
+
+### clone o repositório
+
+Endereço:
+
+```
+https://github.com/guilhermelaureano/dragon-collection
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Instalação
+
+Após clonar o projeto em sua máquina local, vá até o diretório onde o projeto está localizado e digite o comando:
+
+```
+npm install
+```
+
+Obs: Verifique a sua versão do Node, no momento do deste desenvolvimento utilizamos a versão Node version: 20.3.1.
+
+### Subir o projeto localmente
+
+Após a instalação, podemos executar o projeto:
+
+```
+npm run dev
+```
