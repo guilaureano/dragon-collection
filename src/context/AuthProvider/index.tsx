@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 
-import { IAuthProvider, IContext, IUser } from './types';
+import { IAuthProvider, IContext, IUser, IUserToken } from './types';
 import {
   getUser,
   getUsersDBLocalStorage,
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   const [user, setUser] = useState<IUser | null>();
 
   useEffect(() => {
-    const userToken = getUserTokenLocalStorage();
+    const userToken: IUserToken = getUserTokenLocalStorage();
     const users = getUsersDBLocalStorage();
 
     if (userToken?.email && users?.length > 0) {
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
       if (hasUser[0].email === email && hasUser[0].password === password) {
         const token = Math.random().toString(36).substring(2);
         localStorage.setItem('ut', JSON.stringify({ email, token }));
-        setUser({ email, token });
+        setUser({ email, password });
       } else {
         throw new Error('Opa! E-mail e/ou senha incorretos.');
       }
@@ -65,7 +65,6 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
     <AuthContext.Provider
       value={{
         email: user?.email,
-        token: user?.token,
         handleLogout,
         handleSignin,
         handleSignup,

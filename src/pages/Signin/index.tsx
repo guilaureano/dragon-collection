@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Input, Text } from 'components';
 import { errorMessage } from 'assets/common-texts';
 import { ISigninData } from './types';
-import { validateEmail } from 'utils';
 import '../../assets/global.scss';
 
 export const Signin = () => {
@@ -42,8 +41,6 @@ export const Signin = () => {
     }));
   };
 
-  const isValid = validateEmail(formData.email);
-
   return (
     <div className='sign-wrap'>
       <div className='sign'>
@@ -57,7 +54,6 @@ export const Signin = () => {
             type='email'
             value={formData.email}
             placeholder='digite seu e-mail'
-            isInvalid={!isValid}
           />
           <Text className='sign-text'>Senha</Text>
           <Input

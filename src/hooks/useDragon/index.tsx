@@ -25,7 +25,7 @@ export const useDragon = () => {
         }
       })
       .catch(error => {
-        console.log('useDragon ~ list ~ error:', error);
+        console.log('useDragon ~ getList ~ error:', error);
         setList({ ...list, hasError: true, loading: false });
       });
   };
@@ -38,7 +38,7 @@ export const useDragon = () => {
         getList();
       })
       .catch(error => {
-        console.log('useDragon ~ list ~ error:', error);
+        console.log('useDragon ~ handleDeleteDragon ~ error:', error);
         showToast({
           message: 'Opa! Ocorreu um erro ao tentar deletar o Dragão.',
         });

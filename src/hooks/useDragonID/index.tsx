@@ -23,7 +23,7 @@ export const useDragonID = () => {
         setList({ ...list, data: response.data, loading: false });
       })
       .catch(error => {
-        console.log('useDragon ~ list ~ error:', error);
+        console.log('useDragonID ~ getDragonByID ~ error:', error);
         setList({ ...list, hasError: true, loading: false });
       });
   };

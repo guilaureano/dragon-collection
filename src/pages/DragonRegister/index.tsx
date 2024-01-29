@@ -41,7 +41,6 @@ export const DragonRegister = () => {
       showToast({ message: 'Dragão cadastrado com sucesso!' });
       navigate('/');
     } catch (error: unknown) {
-      console.log('🚀 ~ onSubmit ~ error:', error);
       if (typeof error === 'object' && error !== null) {
         const customError = error as ICustomError;
         showToast({ message: customError?.message || errorMessage });

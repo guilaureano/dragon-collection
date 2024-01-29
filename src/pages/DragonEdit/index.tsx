@@ -12,7 +12,6 @@ export const DragonEdit = () => {
   const { showToast } = useToast();
   const navigate = useNavigate();
   const { data, getDragonByID, hasError, loading } = useDragonID();
-  console.log('🚀 ~ DragonEdit ~ data:', data);
   const { pathname } = useLocation();
   const id = pathname.replace(/^\/dragon\/edit\//, '');
   const [formData, setFormData] = useState<IDragon>({} as IDragon);
@@ -49,7 +48,6 @@ export const DragonEdit = () => {
       showToast({ message: 'Dragão Editado com sucesso!' });
       navigate('/');
     } catch (error: unknown) {
-      console.log('🚀 ~ onSubmit ~ error:', error);
       if (typeof error === 'object' && error !== null) {
         const customError = error as ICustomError;
         showToast({ message: customError?.message || errorMessage });
