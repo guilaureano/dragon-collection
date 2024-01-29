@@ -1,0 +1,12 @@
+@import '../../assets/colors.scss';
+
+.detail {
+  border-radius: 8px;
+  background-color: $gray-001;
+  padding: 32px 24px;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  gap: 24px;
+}
