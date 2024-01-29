@@ -43,10 +43,13 @@ export const Home = () => {
     }
     if (hasError) {
       return (
-        <Text.Subtitle>
-          Opa, parece que estamos enfrentando problemas com o servidor,
-          verifique sua conexão com a internet e tente novamente.
-        </Text.Subtitle>
+        <div className='home'>
+          <Text.Title className='home-title'>Lista de Dragões</Text.Title>
+          <Text.Subtitle>
+            Opa, parece que estamos enfrentando problemas com o servidor,
+            verifique sua conexão com a internet e tente novamente.
+          </Text.Subtitle>
+        </div>
       );
     }
   }
