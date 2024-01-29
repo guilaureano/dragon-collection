@@ -1,0 +1,23 @@
+@import '../../assets/colors.scss';
+
+.button {
+  background-color: $gray-003;
+  border: none;
+  border-radius: 100vh;
+  color: $white;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: background-color 0.5s;
+  &:not(:disabled):hover {
+    background-color: $primary;
+    color: $black;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
