@@ -8,6 +8,7 @@ import { Signup } from 'pages/Signup';
 import { DragonDetails } from 'pages/DragonDetails';
 import { DragonEdit } from 'pages/DragonEdit';
 import { DragonRegister } from 'pages/DragonRegister';
+import { NotFound } from 'pages/NotFound';
 
 const Private = ({ Item }: { Item: FC }) => {
   const auth = useAuth();
@@ -26,6 +27,7 @@ const RoutesApp = () => {
           path='/dragon/edit/:id'
           element={<Private Item={DragonEdit} />}
         />
+        <Route path='/*' element={<Private Item={NotFound} />} />
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
       </Routes>

@@ -2,11 +2,6 @@
 @import '../../assets/colors.scss';
 
 .register {
-  background-color: $gray-002;
-  border-radius: 16px;
-  padding: 24px;
-  gap: 12px;
-
   &-action {
     display: flex;
     flex-direction: row-reverse;

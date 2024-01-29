@@ -10,8 +10,8 @@ interface ISkeleton {
 }
 
 export const Skeleton: FC<ISkeleton> = ({
-  width = '100%',
-  height = '100%',
+  width = '75svw',
+  height = '50svh',
   borderRadius = '0',
 }) => {
   return (

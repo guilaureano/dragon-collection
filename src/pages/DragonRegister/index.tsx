@@ -51,39 +51,41 @@ export const DragonRegister = () => {
   };
 
   return (
-    <div className='register'>
-      <Text.Title className='register-title'>Cadastrar novo Dragão</Text.Title>
-      <form className='register-form' onSubmit={onSubmit}>
-        <Text className='register-text'>Qual o nome do Dragão?</Text>
-        <Input
-          name='name'
-          onChange={handleChange}
-          type='text'
-          value={formData.name}
-          placeholder='Digite o nome do Dragão'
-        />
-        <Text className='register-text'>Qual o tipo do Dragão?</Text>
-        <Input
-          name='type'
-          onChange={handleChange}
-          type='text'
-          value={formData.type}
-          placeholder='Digite o tipo do Dragão'
-        />
-        <Text className='register-text'>Qual a história do Dragão?</Text>
-        <Input
-          name='histories'
-          onChange={handleChange}
-          type='text'
-          value={formData.histories}
-          placeholder='Era uma vez...'
-        />
-        <div className='register-action'>
-          <Button className='register-btn' type='submit'>
-            Cadastrar
-          </Button>
-        </div>
-      </form>
+    <div className='page'>
+      <div className='page-panel'>
+        <Text.Title className='page-title'>Cadastrar novo Dragão</Text.Title>
+        <form className='register-form' onSubmit={onSubmit}>
+          <Text className='register-text'>Qual o nome do Dragão?</Text>
+          <Input
+            name='name'
+            onChange={handleChange}
+            type='text'
+            value={formData.name}
+            placeholder='Digite o nome do Dragão'
+          />
+          <Text className='register-text'>Qual o tipo do Dragão?</Text>
+          <Input
+            name='type'
+            onChange={handleChange}
+            type='text'
+            value={formData.type}
+            placeholder='Digite o tipo do Dragão'
+          />
+          <Text className='register-text'>Qual a história do Dragão?</Text>
+          <Input
+            name='histories'
+            onChange={handleChange}
+            type='text'
+            value={formData.histories}
+            placeholder='Era uma vez...'
+          />
+          <div className='register-action'>
+            <Button className='register-btn' type='submit'>
+              Cadastrar
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

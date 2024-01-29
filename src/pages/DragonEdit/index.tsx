@@ -60,59 +60,65 @@ export const DragonEdit = () => {
   if (!data?.name) {
     if (loading) {
       return (
-        <div className='home'>
-          <Text.Title className='home-title'>Detalhes do Dragão</Text.Title>
-          <Skeleton width='75svw' height='75svh' />
+        <div className='page'>
+          <div className='page-panel'>
+            <Text.Title className='page-title'>Alterar Dragão</Text.Title>
+            <Skeleton />
+          </div>
         </div>
       );
     }
     if (hasError) {
       return (
-        <div className='home'>
-          <Text.Title>Detalhes do Dragão</Text.Title>
-          <Text.Subtitle>
-            Opa, parece que estamos enfrentando problemas com o servidor,
-            verifique sua conexão com a internet e tente novamente.
-          </Text.Subtitle>
+        <div className='page'>
+          <div className='page-panel'>
+            <Text.Title className='page-title'>Alterar Dragão</Text.Title>
+            <Text.Subtitle className='page-subtitle'>
+              Opa, parece que estamos enfrentando problemas com o servidor,
+              verifique sua conexão com a internet e tente novamente.
+            </Text.Subtitle>
+          </div>
         </div>
       );
     }
   }
 
   return (
-    <div className='register'>
-      <Text.Title className='register-title'>Editar Dragão</Text.Title>
-      <form className='register-form' onSubmit={onSubmit}>
-        <Text className='register-text'>Nome do Dragão</Text>
-        <Input
-          name='name'
-          onChange={handleChange}
-          type='text'
-          value={formData.name}
-          placeholder='Digite o nome do Dragão'
-        />
-        <Text className='register-text'>Tipo do Dragão</Text>
-        <Input
-          name='type'
-          onChange={handleChange}
-          type='text'
-          value={formData.type}
-          placeholder='Digite o tipo do Dragão'
-        />
-        <Text className='register-text'>História do Dragão</Text>
-        <Input
-          name='histories'
-          onChange={handleChange}
-          type='text'
-          value={formData.histories}
-          placeholder='Era uma vez...'
-        />
-        <div className='register-action'>
-          <Button className='register-btn' type='submit'>
-            Enviar
-          </Button>
-        </div>
-      </form>
+    <div className='page'>
+      <div className='page-panel'>
+        <Text.Title className='page-title'>Alterar Dragão</Text.Title>
+        <form className='register-form' onSubmit={onSubmit}>
+          <Text className='register-text'>Nome do Dragão</Text>
+          <Input
+            name='name'
+            onChange={handleChange}
+            type='text'
+            value={formData.name}
+            placeholder='Digite o nome do Dragão'
+          />
+          <Text className='register-text'>Tipo do Dragão</Text>
+          <Input
+            name='type'
+            onChange={handleChange}
+            type='text'
+            value={formData.type}
+            placeholder='Digite o tipo do Dragão'
+          />
+          <Text className='register-text'>História do Dragão</Text>
+          <Input
+            name='histories'
+            onChange={handleChange}
+            type='text'
+            value={formData.histories}
+            placeholder='Era uma vez...'
+          />
+          <div className='register-action'>
+            <Button className='register-btn' type='submit'>
+              Enviar
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

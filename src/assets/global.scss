@@ -77,3 +77,36 @@ body {
     width: 298px;
   }
 }
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 62px 24px;
+  background-image: url('./images/Dragon-pana.png');
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100svh - 124px);
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &-subtitle {
+    margin: 24px 0;
+  }
+
+  &-action {
+    margin-top: 24px;
+  }
+
+  &-panel {
+    background-color: $panel;
+    border-radius: 16px;
+    padding: 24px;
+    gap: 12px;
+  }
+}

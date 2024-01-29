@@ -15,6 +15,9 @@ export const TableDragon: FC<ITableProps> = ({ data, onDelete, onEdit }) => {
   const navigate = useNavigate();
   return (
     <div className='table-wrapper'>
+      <Button className='table-add' onClick={() => navigate('dragon/new')}>
+        Adicionar novo dragão
+      </Button>
       <table className='table'>
         <thead>
           <tr>

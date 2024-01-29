@@ -18,28 +18,30 @@ export const DragonDetails = () => {
   if (!data?.name) {
     if (loading) {
       return (
-        <div className='home'>
-          <Text.Title className='home-title'>Detalhes do Dragão</Text.Title>
-          <Skeleton width='75svw' height='75svh' />
+        <div className='page'>
+          <Text.Title className='page-title'>Detalhes do Dragão</Text.Title>
+          <Skeleton />
         </div>
       );
     }
     if (hasError) {
       return (
-        <div className='home'>
-          <Text.Title>Detalhes do Dragão</Text.Title>
-          <Text.Subtitle>
-            Opa, parece que estamos enfrentando problemas com o servidor,
-            verifique sua conexão com a internet e tente novamente.
-          </Text.Subtitle>
+        <div className='page'>
+          <div className='page-panel'>
+            <Text.Title className='page-title'>Detalhes do Dragão</Text.Title>
+            <Text.Subtitle className='page-subtitle'>
+              Opa, parece que estamos enfrentando problemas com o servidor,
+              verifique sua conexão com a internet e tente novamente.
+            </Text.Subtitle>
+          </div>
         </div>
       );
     }
   }
 
   return (
-    <div className='home'>
-      <Text.Title>Detalhes do Dragão</Text.Title>
+    <div className='page'>
+      <Text.Title className='page-title'>Detalhes do Dragão</Text.Title>
       <div className='detail'>
         <div>
           <Text>Data de Criação</Text>
