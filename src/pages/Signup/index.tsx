@@ -7,6 +7,7 @@ import { Button, Input, Text } from 'components';
 import { errorMessage } from 'assets/common-texts';
 import { ISignupData } from './types';
 import '../../assets/global.scss';
+import { validateEmail } from 'utils';
 
 export const Signup = () => {
   const auth = useAuth();
@@ -21,10 +22,7 @@ export const Signup = () => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [name]: value });
   };
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -44,6 +42,14 @@ export const Signup = () => {
     }
   };
 
+  const validEmail = !!formData.email && validateEmail(formData.email);
+  const validEmailConfirmation =
+    !!formData.emailConfirmation &&
+    !!formData.email &&
+    formData.emailConfirmation === formData.email;
+  const validPassword = !!formData.password && formData.password.length >= 4;
+  const enabledButton = validEmail && validEmailConfirmation && validPassword;
+
   return (
     <div className='sign-wrap'>
       <div className='sign'>
@@ -54,29 +60,32 @@ export const Signup = () => {
           </Text.Subtitle>
           <Text className='sign-text'>E-mail</Text>
           <Input
+            isInvalid={!!formData.email && !validEmail}
             name='email'
             onChange={handleChange}
+            placeholder='Digite seu e-mail'
             type='email'
             value={formData.email}
-            placeholder='Digite seu e-mail'
           />
           <Text className='sign-text'>Confirme seu e-mail</Text>
           <Input
+            isInvalid={!!formData.emailConfirmation && !validEmailConfirmation}
             name='emailConfirmation'
             onChange={handleChange}
+            placeholder='Confirme seu e-mail'
             type='email'
             value={formData.emailConfirmation}
-            placeholder='Confirme seu e-mail'
           />
           <Text className='sign-text'>Senha</Text>
           <Input
+            isInvalid={!!formData.password && !validPassword}
             name='password'
             onChange={handleChange}
+            placeholder='Digite sua senha'
             type='password'
             value={formData.password}
-            placeholder='Digite sua senha'
           />
-          <Button className='sign-btn' type='submit'>
+          <Button disabled={!enabledButton} className='sign-btn' type='submit'>
             Criar conta
           </Button>
         </form>
