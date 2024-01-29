@@ -1,7 +1,15 @@
-import './App.css';
+import { ToastProvider } from 'context/ToastProvider';
+import RoutesApp from './Routes';
+import { AuthProvider } from './context/AuthProvider';
 
 function App() {
-  return <h1>Dragon Collection</h1>;
+  return (
+    <ToastProvider>
+      <AuthProvider>
+        <RoutesApp />
+      </AuthProvider>
+    </ToastProvider>
+  );
 }
 
 export default App;
