@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Input, Text } from 'components';
 import { errorMessage } from 'assets/common-texts';
 import { ISigninData } from './types';
-import './signin.scss';
 import { validateEmail } from 'utils';
+import '../../assets/global.scss';
 
 export const Signin = () => {
   const auth = useAuth();
@@ -45,33 +45,37 @@ export const Signin = () => {
   const isValid = validateEmail(formData.email);
 
   return (
-    <div className='signin'>
-      <Text.Title className='signin-title'>Dragon Collection</Text.Title>
-      <form className='signin-form' onSubmit={onSubmit}>
-        <Text className='signin-text'>Usuário</Text>
-        <Input
-          autoComplete='email'
-          name='email'
-          onChange={handleChange}
-          type='email'
-          value={formData.email}
-          placeholder='digite seu e-mail'
-          isInvalid={!isValid}
-        />
-        <Text className='signin-text'>Senha</Text>
-        <Input
-          autoComplete='password'
-          name='password'
-          onChange={handleChange}
-          type='password'
-          value={formData.password}
-          placeholder='digite sua senha'
-        />
-        <Button className='signin-btn' type='submit'>
-          Entrar
-        </Button>
-      </form>
-      <Button onClick={() => navigate('/signup')}>Criar conta</Button>
+    <div className='sign-wrap'>
+      <div className='sign'>
+        <Text.Title className='sign-title'>Dragon Collection</Text.Title>
+        <form className='sign-form' onSubmit={onSubmit}>
+          <Text className='sign-text'>Usuário</Text>
+          <Input
+            autoComplete='email'
+            name='email'
+            onChange={handleChange}
+            type='email'
+            value={formData.email}
+            placeholder='digite seu e-mail'
+            isInvalid={!isValid}
+          />
+          <Text className='sign-text'>Senha</Text>
+          <Input
+            autoComplete='password'
+            name='password'
+            onChange={handleChange}
+            type='password'
+            value={formData.password}
+            placeholder='digite sua senha'
+          />
+          <Button className='sign-btn' type='submit'>
+            Entrar
+          </Button>
+        </form>
+        <div className='sign-action'>
+          <Button onClick={() => navigate('/signup')}>Criar conta</Button>
+        </div>
+      </div>
     </div>
   );
 };

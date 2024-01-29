@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Input, Text } from 'components';
 import { errorMessage } from 'assets/common-texts';
 import { ISignupData } from './types';
+import '../../assets/global.scss';
 
 export const Signup = () => {
   const auth = useAuth();
@@ -44,38 +45,42 @@ export const Signup = () => {
   };
 
   return (
-    <div className='signin'>
-      <Text.Title className='signin-title'>Dragon Collection</Text.Title>
-      <form className='signin-form' onSubmit={onSubmit}>
-        <Text.Subtitle className='signin-subtitle'>Novo Usuário</Text.Subtitle>
-        <Text className='signin-text'>E-mail</Text>
-        <Input
-          name='email'
-          onChange={handleChange}
-          type='email'
-          value={formData.email}
-          placeholder='Digite seu e-mail'
-        />
-        <Text className='signin-text'>Confirme seu e-mail</Text>
-        <Input
-          name='emailConfirmation'
-          onChange={handleChange}
-          type='email'
-          value={formData.emailConfirmation}
-          placeholder='Confirme seu e-mail'
-        />
-        <Text className='signin-text'>Senha</Text>
-        <Input
-          name='password'
-          onChange={handleChange}
-          type='password'
-          value={formData.password}
-          placeholder='Digite sua senha'
-        />
-        <Button className='signin-btn' type='submit'>
-          Criar conta
-        </Button>
-      </form>
+    <div className='sign-wrap'>
+      <div className='sign'>
+        <Text.Title className='sign-title'>Dragon Collection</Text.Title>
+        <form className='sign-form' onSubmit={onSubmit}>
+          <Text.Subtitle className='sign-subtitle'>
+            Cadastrar Novo Usuário
+          </Text.Subtitle>
+          <Text className='sign-text'>E-mail</Text>
+          <Input
+            name='email'
+            onChange={handleChange}
+            type='email'
+            value={formData.email}
+            placeholder='Digite seu e-mail'
+          />
+          <Text className='sign-text'>Confirme seu e-mail</Text>
+          <Input
+            name='emailConfirmation'
+            onChange={handleChange}
+            type='email'
+            value={formData.emailConfirmation}
+            placeholder='Confirme seu e-mail'
+          />
+          <Text className='sign-text'>Senha</Text>
+          <Input
+            name='password'
+            onChange={handleChange}
+            type='password'
+            value={formData.password}
+            placeholder='Digite sua senha'
+          />
+          <Button className='sign-btn' type='submit'>
+            Criar conta
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };
