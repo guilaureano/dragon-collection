@@ -1,0 +1,22 @@
+@import '../../assets/screens.scss';
+@import '../../assets/colors.scss';
+
+.skeleton {
+  background-color: $gray-002;
+  animation: pulse 1s infinite alternate;
+  max-width: $large-screen;
+
+  &-text {
+    padding: 24px;
+    color: $gray-001;
+  }
+
+  @keyframes pulse {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+}
