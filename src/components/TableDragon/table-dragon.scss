@@ -1,0 +1,41 @@
+@import '../../assets/colors.scss';
+@import '../../assets/screens.scss';
+
+.table-wrapper {
+  max-width: $large-screen;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    min-width: 120px;
+    padding: 8px;
+    border: 1px solid $gray-001;
+    text-align: left;
+    &.actions {
+      text-align: center;
+      min-width: 100%;
+    }
+    &.name {
+      min-width: 200px;
+    }
+    &.ids {
+      min-width: 40px;
+    }
+  }
+
+  th {
+    background-color: $primary;
+    color: $black;
+  }
+
+  tr:hover {
+    border-color: $primary;
+    background-color: $gray-003;
+  }
+}
