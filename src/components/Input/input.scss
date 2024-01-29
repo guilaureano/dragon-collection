@@ -1,0 +1,16 @@
+@import '../../assets/colors.scss';
+
+.input {
+  font-size: 1rem;
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid $secondary;
+  &:hover {
+    border-color: $primary !important;
+  }
+
+  &.invalid {
+    border: 1.5px solid $red;
+  }
+}
